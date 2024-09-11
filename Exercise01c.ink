@@ -27,6 +27,12 @@ You are at the enterance to a cave. {not torch_pickup:There is a torch on the fl
 + [Take the east tunnel] -> east_tunnel
 + [Take the west tunnel] -> west_tunnel
 * [Pick up the torch] -> torch_pickup
++ [Take the north tunnel] -> north_tunnel
++ [Take the south tunnel] -> south_tunnel 
+* [Pick up the axe] -> axe_pickup
++ [Take the new tunnel] -> new_tunnel
+
+
 
 == east_tunnel ==
 You are in the east tunnel. It is very dark, you can't see anything.
@@ -47,3 +53,30 @@ You now have a torch. May it light the way.
 == east_tunnel_lit ==
 The light of your torch glints off of the thousands of coins in the room.
 -> END
+
+== north_tunnel ==
+You are in the north. You hear a noise. You are now unsure of your surroundings.
++ [Go back] -> west_tunnel
++ [Go back] -> torch_pickup
+-> END
+
+== south_tunnel ==
+You are now in the south. All around you is gold and silver worth millions. You have hit jackpot. 
+* {axe_pickup} [Sharpen Axe] -> south_tunnel_axe
++ [Go back] -> cave_mouth
+-> END
+
+== south_tunnel_axe ==
+The sharpenness of your axe is successful. You now have plenty of silver and gold. 
+-> END 
+
+== new_tunnel == 
+This tunnel has never been discovered before. It is dark and dampy. You cant see anything. 
+* {torch_pickup} [Light Torch] -> new_tunnel_lit
++ [Go Back] -> cave_mouth
+-> END 
+
+== new_tunnel_lit == 
+You can now see the inside of the new tunnel. You start discovering it. 
+-> END 
+
